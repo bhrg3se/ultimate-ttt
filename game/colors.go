@@ -1,0 +1,37 @@
+package game
+
+import (
+	"image/color"
+)
+
+var (
+	backgroundColor    = color.RGBA{0xfa, 0xf8, 0xef, 0xff}
+	frameColor         = color.RGBA{0xbb, 0xad, 0xa0, 0xff}
+	frame2Color        = color.RGBA{0x00, 0x00, 0x00, 0xFF}
+	nextMiniBoardColor = color.RGBA{0x0F, 0x0F, 0xB0, 0x4F}
+)
+
+func tileColor(value int) color.Color {
+	switch value {
+	case -1:
+		return color.RGBA{0xFF, 0xFF, 0xFF, 0xff}
+	case 0:
+		return color.RGBA{0xf9, 0xf6, 0xf2, 0xff}
+	case 1:
+		return color.RGBA{0xb9, 0xb6, 0xb2, 0xbf}
+	}
+
+	panic("not reach")
+}
+
+func tileBackgroundColor(value int) color.Color {
+	switch value {
+	case -1:
+		return color.NRGBA{0xee, 0xe4, 0xda, 0x59}
+	case 0:
+		return color.RGBA{0xee, 0xe4, 0xda, 0xff}
+	case 1:
+		return color.RGBA{0xed, 0xe0, 0xc8, 0xff}
+	}
+	panic("not reach")
+}
